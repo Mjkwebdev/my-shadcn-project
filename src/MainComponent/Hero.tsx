@@ -8,7 +8,7 @@ const Hero = () => {
       <p className='text-lg'> Reserve sunbeds, enjoy add-ons, and relax without hassle</p>
       </div>
       <div className='w-1/2 bg-cover' style={{backgroundImage: `url(${BeachImgComponent})`}}>
-    <img src="${beachImgComponent}" alt="" />
+    <img src="${beachImgComponent}" alt="Beach image" />
       </div>
     </div>
   )
