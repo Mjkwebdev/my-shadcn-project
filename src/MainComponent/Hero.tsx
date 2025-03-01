@@ -2,6 +2,7 @@
 import BeachImgComponent from "../BeachImgComponent"
 const Hero = () => {
   return (
+    <>
     <div className='flex w-screen h-screen bg-[green]'>
       <div className='w-1/2 bg-[#AD8330] flex flex-col justify-center'>
         <h1 className='text-4xl font-bold p-10'> Experience the Perfect Beach Day with Ease</h1>
@@ -11,6 +12,7 @@ const Hero = () => {
     <img src="${beachImgComponent}" alt="Beach image" />
       </div>
     </div>
+    </>
   )
 }
 
