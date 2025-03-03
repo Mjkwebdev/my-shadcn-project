@@ -1,19 +1,25 @@
+import BeachImgComponent from '../assets/beachBg.jpg'
+import SearchInput from "./SearchElement/SearchInput";
 
-import BeachImgComponent from "../BeachImgComponent"
 const Hero = () => {
   return (
-    <>
-    <div className='flex w-screen h-screen bg-[green]'>
-      <div className='w-1/2 bg-[#AD8330] flex flex-col justify-center'>
-        <h1 className='text-4xl font-bold p-10'> Experience the Perfect Beach Day with Ease</h1>
-      <p className='text-lg'> Reserve sunbeds, enjoy add-ons, and relax without hassle</p>
+    <div className="w-screen h-[532px] flex">
+      <div className="bg-[#AD8330] relative w-1/2">
+        <h2 className="w-[446px] h-[176px] absolute top-[9.8rem] left-[3rem] text-5xl font-[700] font-[Ambit] leading-[55px] tracking-normal text-[#FFFFFF]">
+          Experience the Perfect Beach Day with Ease{" "}
+        </h2>
+        <p className="w-[316px] h-[48px] absolute top-[20.5rem] left-[3rem] font-[500] font-[Poppins] text-[#FFFFFF]">
+          {" "}
+          Reserve sunbeds, enjoy add-ons, and relax without hassle.
+        </p>
+        <SearchInput />
       </div>
-      <div className='w-1/2 bg-cover' style={{backgroundImage: `url(${BeachImgComponent})`}}>
-    <img src="${beachImgComponent}" alt="Beach image" />
-      </div>
+      <div
+        className="w-full bg-cover bg-center"
+        style={{ backgroundImage: `url(${BeachImgComponent})` }}
+      ></div>
     </div>
-    </>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
