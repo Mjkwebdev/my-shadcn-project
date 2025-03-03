@@ -5,10 +5,10 @@ const Hero = () => {
   return (
     <div className="w-screen h-[532px] flex">
       <div className="bg-[#AD8330] relative w-1/2">
-        <h2 className="w-[446px] h-[176px] absolute top-[9.8rem] left-[3rem] text-5xl font-[700] font-[Ambit] leading-[55px] tracking-normal text-[#FFFFFF]">
+        <h2 className="w-[446px] h-[176px] absolute top-[9.8rem] left-[3rem] text-5xl font-[700] font-[sans-serif] leading-[55px] tracking-normal text-[#FFFFFF]">
           Experience the Perfect Beach Day with Ease{" "}
         </h2>
-        <p className="w-[316px] h-[48px] absolute top-[20.5rem] left-[3rem] font-[500] font-[Poppins] text-[#FFFFFF]">
+        <p className="w-[316px] h-[48px] absolute top-[20.5rem] left-[3rem] font-[500] font-[Poppins, Sans-serif] text-[#FFFFFF]">
           {" "}
           Reserve sunbeds, enjoy add-ons, and relax without hassle.
         </p>

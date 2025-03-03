@@ -1,3 +1,4 @@
+import { Button } from "../../components/ui/button";
 import Searchbox from "./Searchbox";
 import SelectBox from "./SelectBox";
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
@@ -8,7 +9,7 @@ const SearchInput = () => {
        <div className="bg-white flex items-center  focus:outline-none">
        <SelectBox/>
     
-      <MagnifyingGlassIcon className="h-5 w-full text-[#AD8330]" />  
+     <Button> <MagnifyingGlassIcon className="h-5 w-full text-[#AD8330]" />  </Button> 
         </div>
       </div>
   );
