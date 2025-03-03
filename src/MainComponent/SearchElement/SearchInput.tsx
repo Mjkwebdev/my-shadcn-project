@@ -8,7 +8,6 @@ const SearchInput = () => {
       <Searchbox/>
        <div className="bg-white flex items-center  focus:outline-none">
        <SelectBox/>
-    
      <Button> <MagnifyingGlassIcon className="h-5 w-full text-[#AD8330]" />  </Button> 
         </div>
       </div>

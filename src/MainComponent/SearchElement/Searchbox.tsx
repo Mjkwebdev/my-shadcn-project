@@ -1,14 +1,46 @@
-import { Input } from '../../components/ui/input'
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+ 
+
+Button
+
+import { Calendar } from "../../components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../../components/ui/popover"
+import { Button } from '../../components/ui/button';
+import { cn } from '../../lib/utils';
+import React from "react"
+
 
 const Searchbox = () => {
+  const [date, setDate] = React.useState<Date>()
+ 
   return (
-    <div>
-        <Input
-          type="text"
-          className="w-[10rem] h-full px-4 border rounded-[20px_0px_0px_20px] border-none"
-          placeholder="Quand"
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          variant={"outline"}
+          className={cn(
+            "w-[240px] justify-start text-left font-normal",
+            !date && "text-muted-foreground"
+          )}
+        >
+          <CalendarIcon />
+          {date ? format(date, "PPP") : <span>Pick a date</span>}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-auto p-0" align="start">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          initialFocus
         />
-      </div>
+      </PopoverContent>
+    </Popover>
   )
 }
 
