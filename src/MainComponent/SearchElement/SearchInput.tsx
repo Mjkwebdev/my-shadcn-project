@@ -8,7 +8,7 @@ const SearchInput = () => {
        <div className="bg-white flex items-center focus:outline-none">
        <SelectBox maxGuest={18}/>
         </div>
-        <div className=" flex items-center">
+        <div className="flex items-center">
       <SearchButton/>
         </div>
       </div>
