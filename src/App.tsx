@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Hero from "./MainComponent/Hero";
 import SearchPage from "./Search";
 
