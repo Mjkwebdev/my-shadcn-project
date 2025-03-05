@@ -12,14 +12,18 @@ import React from "react";
 
 const Searchbox = () => {
   const [date, setDate] = React.useState<Date>();
-
+  const [isOpen, setOpen] = React.useState(false);
+  const handleClick =(date:Date)=>{
+    setDate(date);
+    setOpen(false);
+  }
   return (
-    <Popover>
+    <Popover open={isOpen} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
           variant={"link"} 
           className={cn(
-            "w-[14rem] rounded-full justify-start text-left font-normal h-full",
+            "w-[240px] rounded-full justify-start text-left font-normal h-full",
             !date && "text-muted-foreground"
           )}
         >
@@ -31,7 +35,8 @@ const Searchbox = () => {
         <Calendar
           mode="single"
           selected={date}
-          onSelect={setDate}
+          
+          onDayClick={handleClick}
           initialFocus
         />
       </PopoverContent>
