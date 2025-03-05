@@ -1,33 +1,41 @@
+import { UsersIcon, UserIcon } from "@heroicons/react/24/outline";
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-  } from "../../components/ui/select";
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../components/ui/select";
+import { useState } from "react";
 
-const SelectBox = () => {
-  return (
-    <Select>
-    <SelectTrigger className="w-[10rem] h-full">
-      <SelectValue placeholder="2 guests" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectItem value="1">1 guests</SelectItem>
-      <SelectItem value="2">2 guests</SelectItem>
-      <SelectItem value="3">3 guests</SelectItem>
-      <SelectItem value="4">4 guests</SelectItem>
-      <SelectItem value="5">5 guests</SelectItem>
-      <SelectItem value="6">6 guests</SelectItem>
-      <SelectItem value="7">7 guests</SelectItem>
-      <SelectItem value="8">8 guests</SelectItem>
-      <SelectItem value="9">9 guests</SelectItem>
-      <SelectItem value="10">10 guests</SelectItem>
-      <SelectItem value="11">11 guests</SelectItem>
-      <SelectItem value="12">12 guests</SelectItem>
-    </SelectContent>
-  </Select>
-  )
+interface SelectProps {
+  maxGuest: number;
 }
+const SelectBox = ({ maxGuest }: SelectProps) => {
+  const [selectedGuest, setSelectedGuest] = useState("2");
+  const handleSelectGuest=( value: string)=>{
+      setSelectedGuest(value);
+  }
+  const guests = Array.from({ length: maxGuest }, (_, i) => i + 1);
+  return (
+    <Select value={selectedGuest} onValueChange={handleSelectGuest}>
+      <SelectTrigger className="w-[16rem] h-full">
+        <SelectValue/> 
+      </SelectTrigger>
+      <SelectContent>
+        {guests.map((num) => (
+          <SelectItem key={num} value={num.toString()}>
+            {num == 1 ? (
+              <UserIcon className="h-8 w-8 text-gray-500" />
+            ) : (
+              <UsersIcon className="h-8 w-8 text-gray-500" />
+            )}
+           {num} Guest{num > 1 ? "s" : ""}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  );
+};
 
-export default SelectBox
+export default SelectBox;

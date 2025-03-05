@@ -1,12 +1,17 @@
-import './App.css'
-import Hero from './MainComponent/Hero'
-// import SearchInput from './MainComponent/SearchInput'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Hero from "./MainComponent/Hero";
+import SearchPage from "./Search";
 
 function App() {
-
   return (
-    <Hero/>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/hero" element={<Hero/>} />
+        <Route path="/search" element={<SearchPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
