@@ -19,7 +19,7 @@ const Searchbox = () => {
         <Button
           variant={"link"} 
           className={cn(
-            "w-[240px] rounded-full justify-start text-left font-normal h-full",
+            "w-[14rem] rounded-full justify-start text-left font-normal h-full",
             !date && "text-muted-foreground"
           )}
         >

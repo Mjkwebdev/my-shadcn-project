@@ -19,7 +19,7 @@ const SelectBox = ({ maxGuest }: SelectProps) => {
   const guests = Array.from({ length: maxGuest }, (_, i) => i + 1);
   return (
     <Select value={selectedGuest} onValueChange={handleSelectGuest}>
-      <SelectTrigger className="w-[16rem] h-full">
+      <SelectTrigger className="w-[15rem] h-full">
         <SelectValue/> 
       </SelectTrigger>
       <SelectContent>
