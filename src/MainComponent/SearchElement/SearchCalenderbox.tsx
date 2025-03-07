@@ -10,7 +10,7 @@ import { Button } from "../../components/ui/button";
 import { cn } from "../../lib/utils";
 import React from "react";
 
-const Searchbox = () => {
+const SearchCalenderbox = () => {
   const [date, setDate] = React.useState<Date>();
   const [isOpen, setOpen] = React.useState(false);
   const handleClick =(date:Date)=>{
@@ -20,8 +20,7 @@ const Searchbox = () => {
   return (
     <Popover open={isOpen} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button
-          variant={"link"} 
+        <Button variant={"link"}
           className={cn(
             "w-[240px] rounded-full justify-start text-left font-normal h-full",
             !date && "text-muted-foreground"
@@ -34,8 +33,7 @@ const Searchbox = () => {
       <PopoverContent className="w-auto p-0" align="start">
         <Calendar
           mode="single"
-          selected={date}
-          
+          selected={date}     
           onDayClick={handleClick}
           initialFocus
         />
@@ -44,4 +42,4 @@ const Searchbox = () => {
   );
 };
 
-export default Searchbox;
+export default SearchCalenderbox;

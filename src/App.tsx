@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Hero from "./MainComponent/Hero";
-import SearchPage from "./Search";
+import SearchPage from "./MainComponent/Search";
 
 function App() {
   return (
