@@ -1,7 +1,8 @@
 import { useSearchParams } from "react-router-dom";
 
 import { useEffect, useState } from "react";
-interface Listing {
+import CardsGrid from "./CardsGrid";
+export interface Listing {
     [x: string]: any;
     id: string;
     title: string;
@@ -56,14 +57,10 @@ const SearchPage = () => {
       setResults(filteredResults);
     }, [searchParams]);
     return(
-        <div>
-      <h1>Search Results</h1>
+        <div className="grid grid-cols-3 ">
       {results.map((listing) => (
-        <div key={listing.id}>
-          <img src={listing.image} alt={listing.title} /> {/* Display the image */}
-          {listing.title}
-          {listing.location}
-          {listing.maxGuest}
+      <div key={listing.id}>
+          <CardsGrid list={listing}/>
         </div>
       ))}
     </div>
