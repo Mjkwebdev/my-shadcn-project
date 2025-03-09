@@ -1,42 +1,7 @@
 import { useSearchParams } from "react-router-dom";
-
 import { useEffect, useState } from "react";
 import CardsGrid from "./CardsGrid";
-export interface Listing {
-    [x: string]: any;
-    id: string;
-    title: string;
-    image: string;
-    location: string;
-    dateAvailable:  Date;
-    maxGuest: number;
-}
-
-const listings: Listing[]= [{
-    id:"1",
-    title: "Cala Pulpo",
-    image:"src/assets/16d66abc-9a68-4a46-9243-25df762573b6-img.webp",
-    location:"Karachi",
-    dateAvailable: new Date("2024-04-10"),
-    maxGuest: 4,
-},
-{
-    id:"2",
-    title: "Cala Pulpo",
-    image:"src/assets/16d66abc-9a68-4a46-9243-25df762573b6-img.webp",
-    location:"Islamabad",
-    dateAvailable: new Date("2024-04-10"),
-    maxGuest: 4,
-},
-{
-    id:"3",
-    title: "Cala Pulpo",
-    image:"src/assets/16d66abc-9a68-4a46-9243-25df762573b6-img.webp",
-    location:"Lahore",
-    dateAvailable: new Date("2024-04-10"),
-    maxGuest: 4,
-}
-];
+import { Listing, listings } from "./data";
 
 const SearchPage = () => {
     const [searchParams] = useSearchParams();
@@ -57,7 +22,7 @@ const SearchPage = () => {
       setResults(filteredResults);
     }, [searchParams]);
     return(
-        <div className="grid grid-cols-3 ">
+        <div className="grid grid-cols-3">
       {results.map((listing) => (
       <div key={listing.id}>
           <CardsGrid list={listing}/>

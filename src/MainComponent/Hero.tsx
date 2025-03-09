@@ -3,7 +3,7 @@ import SearchInput from "./SearchElement/SearchInput";
 
 const Hero = () => {
   return (
-    <div className="w-screen h-[532px] flex">
+    <div className="w-screen h-screen flex">
       <div className="bg-[#AD8330] relative w-1/2">
         <h2 className="w-[446px] h-[176px] absolute top-[9.8rem] left-[3rem] text-5xl font-[700] font-[sans-serif] leading-[55px] tracking-normal text-[#FFFFFF]">
           Experience the Perfect Beach Day with Ease{" "}
