@@ -1,4 +1,4 @@
-import { LocateIcon } from "lucide-react";
+import { Button } from "../components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
 import { Listing } from "./data";
 
@@ -8,17 +8,19 @@ export interface Props{
 
 const CardsGrid = ({list}:Props) => {
   return (
-    <Card className="w-[20rem]">
-       <img src={list.image} height={15}/> 
+    <Card className="w-[20rem] bg-[#F5F5F5] p-3">
+       <img src={list.image} className="rounded-md h-[12rem]"/> 
     <CardHeader>
-      <CardTitle className="mb-[-1.4rem] text-2xl"> {list.title}</CardTitle>
+      <CardTitle className="pt-[-0.3rem] font-[sans-serif] text-1xl"> {list.title}</CardTitle>
     </CardHeader>
-    <CardContent className="flex">
-     <span className="text-[gray] text-base font-[bold] mb-[-2rem] pt-[0.5rem] pr-[0.4rem]">From {list.price} &euro;</span> 
-     <span className="text-xs bg-blue-200 text-[blue] rounded-full p-[0.5rem]">{list.label}</span> 
+    <CardContent className="text-[black] pt-[-0.3rem]">
+    <p>{list.location}</p> 
+    <p className="text-[400]">Sunbed Type: {list.type}</p> 
+    <p className="font-bold font-[Poppins,Sans-serif]">Total Paid:  &euro;{list.price} </p> 
     </CardContent>
-    <CardFooter className="mt-[-1rem]">
-    <LocateIcon className="pr-2 "/>{list.location}
+    <CardFooter className="mt-[0.1rem]">
+      <Button variant={"link"} className="text-[white] bg-[#B56E08]">Rebook</Button>
+      <Button variant='link' className="text-[#252525] underline font-medium text-bold">Download PDF</Button>
     </CardFooter>
   </Card>
   )

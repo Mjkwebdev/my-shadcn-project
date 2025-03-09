@@ -22,11 +22,11 @@ const SearchCalenderbox = () => {
       <PopoverTrigger asChild>
         <Button variant={"link"}
           className={cn(
-            "w-[240px] rounded-full justify-start text-left font-normal h-full",
+            "w-[240px] rounded justify-start text-left font-normal h-[3rem]  mt-1.5 bg-white",
             !date && "text-muted-foreground"
           )}
         >
-          <CalendarIcon />
+          <CalendarIcon  className="text-[#F5F5F5]-[500]"/>
           {date ? format(date, "PPP") : <span>Quand</span>}
         </Button>
       </PopoverTrigger>

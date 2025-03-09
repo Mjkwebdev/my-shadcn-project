@@ -13,7 +13,7 @@ const Hero = () => {
           Reserve sunbeds, enjoy add-ons, and relax without hassle.
         </p>
         <SearchInput />
-      </div>
+        </div>
       <div
         className="w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${BeachImgComponent})` }}

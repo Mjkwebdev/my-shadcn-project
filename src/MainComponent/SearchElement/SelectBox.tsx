@@ -19,14 +19,14 @@ const SelectBox = ({ maxGuest }: SelectProps) => {
   const guests = Array.from({ length: maxGuest }, (_, i) => i + 1);
   return (
     <Select value={selectedGuest} onValueChange={handleSelectGuest}>
-      <SelectTrigger className="w-[15rem] h-full">
+      <SelectTrigger className="w-[17rem] h-[3rem] mb-2 bg-white">
         <SelectValue/> 
       </SelectTrigger>
       <SelectContent>
         {guests.map((num) => (
           <SelectItem key={num} value={num.toString()}>
             {num == 1 ? (
-              <UserIcon className="h-8 w-8 text-gray-500" />
+              <UserIcon className="h-8 w-8 text-gray-500 " />
             ) : (
               <UsersIcon className="h-8 w-8 text-gray-500" />
             )}

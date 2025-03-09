@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CardsGrid from "./CardsGrid";
 import { Listing, listings } from "./data";
+import SearchInputAbs from "./SearchInputAbs";
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
@@ -23,8 +24,11 @@ const SearchPage = () => {
     setResults(filteredResults);
   }, [searchParams]);
   return (
-    <div className="container">
-      <div className="grid">
+    <>
+      <SearchInputAbs />
+    <div className="container ml-3 h-446px w-1188px place-items-center">
+      <p className="text-2xl font-bold p-3"> Past Bookings</p>
+      <div className="grid grid-cols-3 gap-4 place-items-center">
         {results.map((listing) => (
           <div key={listing.id}>
             <CardsGrid list={listing} />
@@ -32,6 +36,7 @@ const SearchPage = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 export default SearchPage;

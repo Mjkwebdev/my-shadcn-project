@@ -3,6 +3,7 @@ export interface Listing {
   id: string;
   title: string;
   image: string;
+  type:string;
   location: string;
   price: number;
   label: string;
@@ -16,6 +17,7 @@ export const listings: Listing[] = [
     title: "VIP Cabana at Golden Sands Beach",
     image: "src/assets/image (1).png",
     location: "Nice",
+    type:"VIP Cabana",
     price: 30,
     label: "Soon available for booking",
     dateAvailable: new Date("2024-04-10"),
@@ -26,6 +28,7 @@ export const listings: Listing[] = [
     title: "Boa Vista",
     image: "src/assets/image (2).png",
     location: "Marseille",
+    type:"Standard Sunbed",
     price: 28,
     label: "Soon available for booking",
     dateAvailable: new Date("2024-14-03"),
@@ -36,6 +39,7 @@ export const listings: Listing[] = [
     title: "Calabro Beach Club",
     image: "src/assets/image.png",
     location: "Antibes-Juan-les-Pins",
+    type: "Luxury lougage",
     price: 45,
     label: "Soon available for booking",
     dateAvailable: new Date("2024-03-01"),
@@ -44,8 +48,9 @@ export const listings: Listing[] = [
   {
     id: "4",
     title: "Castel Plage",
-    image: "src/assets/6cc55b8f-14ad-456f-9ba1-b1461cb16ea2-img.webp",
+    image: "src/assets/image (1).png",
     location: "Roquebrune-Cap-Martin",
+    type:"Standard Sunbed",
     price: 25,
     label: "Soon available for booking",
     dateAvailable: new Date("2024-02-10"),
@@ -56,9 +61,21 @@ export const listings: Listing[] = [
     title: "Esterel Plage",
     image: "src/assets/16d66abc-9a68-4a46-9243-25df762573b6-img.webp",
     location: "Menton",
+    type:"Standard Sunbed",
     price: 24,
     label: "Soon available for booking",
     dateAvailable: new Date("2024-01-10"),
     maxGuest: 4,
   },
+  {
+    id: "6",
+    title: "Esterel Plage",
+    image: "src/assets/image.png",
+    location: "Menton",
+    type:"Standard Sunbed",
+    price: 24,
+    label: "Soon available for booking",
+    dateAvailable: new Date("2024-01-10"),
+    maxGuest: 4,
+  }
 ];
