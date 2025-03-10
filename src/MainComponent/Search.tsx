@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import CardsGrid from "./CardsGrid";
 import { Listing, listings } from "./data";
 import SearchInputAbs from "./SearchInputAbs";
+import LocationMap from "./LocationMap";
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
@@ -25,6 +26,7 @@ const SearchPage = () => {
   }, [searchParams]);
   return (
     <>
+      <LocationMap/>
       <SearchInputAbs />
     <div className="container ml-3 h-446px w-1188px place-items-center">
       <p className="text-2xl font-bold p-3"> Past Bookings</p>
@@ -36,6 +38,7 @@ const SearchPage = () => {
         ))}
       </div>
     </div>
+  
     </>
   );
 };
