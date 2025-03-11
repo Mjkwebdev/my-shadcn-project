@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Button } from "../components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export default function BookNowForm() {
+  const navigate = useNavigate()
   const [guests, setGuests] = useState<number>(2); // Set initial type to number
   const [date, setDate] = useState<string>(""); // Set initial type to string
 
@@ -52,7 +54,7 @@ export default function BookNowForm() {
           />
         </div>
 
-        <Button variant={"booknow"}>Book Now</Button>
+        <Button onClick={()=>navigate("/booking")} variant={"booknow"}>Book Now</Button>
       </form>
     </div>
   );
