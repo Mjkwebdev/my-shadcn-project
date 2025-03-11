@@ -23,7 +23,7 @@ export default function LoginForm() {
   return (
     <>
       <div className="flex flex-col justify-center px-8">
-        <div className="mt-10 sm:mx-auto sm:w-full bg-[#f5f5f5] p-6 rounded-[11px]">
+        <div className="sm:mx-auto sm:w-full bg-[#f5f5f5] p-6 rounded-[11px]">
           <h2 className="text-center text-2xl/9 font-bold tracking-tight text-[#252525]">
             Sign in to your account
           </h2>
