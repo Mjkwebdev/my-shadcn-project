@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Button } from "../components/ui/button";
 interface FormData {
   email: string;
   password: string;
@@ -23,23 +23,15 @@ export default function LoginForm() {
   return (
     <>
       <div className="flex flex-col justify-center px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            alt="Your Company"
-            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-            className="mx-auto h-10 w-auto"
-          />
-          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+        <div className="mt-10 sm:mx-auto sm:w-full bg-[#f5f5f5] p-6 rounded-[11px]">
+          <h2 className="text-center text-2xl/9 font-bold tracking-tight text-[#252525]">
             Sign in to your account
           </h2>
-        </div>
-
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 mt-12">
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-xs font-medium font-[Poppins,Sans-serif] text-[#252525]"
               >
                 Email address
               </label>
@@ -48,54 +40,39 @@ export default function LoginForm() {
                   id="email"
                   name="email"
                   type="email"
+                  placeholder="Enter Email Address"
                   required
                   autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="block w-full rounded-md border border-black bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full font-[Poppins,Sans-serif] font-normal text-xs rounded-[6px] placeholder:text-[#0d0d0d] border border-[#9d9d9d] bg-white px-3 py-1.5 text-[#252525] outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div>
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="block text-sm/6 font-medium text-gray-900"
-                >
-                  Password
-                </label>
-                <div className="text-sm">
-                  <a
-                    href="#"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
-              </div>
+              <label
+                htmlFor="password"
+                className="block text-xs font-medium font-[Poppins,Sans-serif] text-[#252525]"
+              >
+                Password
+              </label>
               <div className="mt-2">
                 <input
                   id="password"
                   name="password"
                   type="password"
+                  placeholder="Enter password"
                   required
-                  autoComplete="current-password"
+                  autoComplete="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="block w-full border border-black rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full font-[Poppins,Sans-serif] font-normal text-xs rounded-[6px] placeholder:text-[#0d0d0d] border border-[#9d9d9d] bg-white px-3 py-1.5 text-[#252525] outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
-            <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Sign in
-              </button>
-            </div>
+            <Button variant={"booknow"}> Sign in</Button>
           </form>
         </div>
       </div>

@@ -4,7 +4,7 @@ import LoginForm from "./LoginForm";
 
 const Booking = () => {
   return (
-    <div className="flex items-start py-2 mx-24">
+    <div className="flex items-start gap-12 py-2 mx-24">
       <div className="w-[35%] bg-white shadow-lg rounded-lg border border-gray-200  p-6">
         <div className="flex items-center border-b pb-3">
           <img
