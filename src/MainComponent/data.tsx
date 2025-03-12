@@ -59,7 +59,7 @@ export const listings: Listing[] = [
   {
     id: "5",
     title: "Esterel Plage",
-    image: "src/assets/16d66abc-9a68-4a46-9243-25df762573b6-img.webp",
+    image: "src/assets/image (2).png",
     location: "Menton",
     type:"Standard Sunbed",
     price: 24,

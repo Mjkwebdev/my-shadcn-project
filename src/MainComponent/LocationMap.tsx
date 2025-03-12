@@ -44,7 +44,7 @@ const LocationMap: React.FC = () => {
 
       {location ? (
         <MapContainer
-          center={location}
+        center={[location.lat, location.lng] as [number, number]}
           zoom={13}
           className="w-full h-full"
         >
