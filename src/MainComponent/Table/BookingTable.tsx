@@ -41,7 +41,7 @@ const BookingTable: React.FC = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full bg-[#f5f5f5] rounded-[10px]">
           <thead>
-            <tr className=" text-[#252525] font-semibold text-sm font-[Poppins,Sans-serif]">
+            <tr className=" text-[#252525] font-semibold text-sm font-[Poppins,Sans-serif] border-b border-gray-300">
               <th className="p-3 font-[Poppins,Sans-serif] text-left">#</th>
               <th className="p-3 font-[Poppins,Sans-serif] text-left">
                 Booking ID
@@ -64,12 +64,14 @@ const BookingTable: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings?.map((booking) => (
+            {bookings?.map((booking, index) => (
               <tr
                 key={booking.id}
-                className=" text-[#252525] font-normal text-sm"
+                className={` text-[#252525] font-normal text-sm ${
+                  index !== bookings.length - 1 && "border-b border-gray-300"
+                }`}
               >
-                <td className="p-3 font-[Poppins,Sans-serif]">1</td>
+                <td className="p-3 font-[Poppins,Sans-serif]">{index}</td>
                 <td className="p-3 font-[Poppins,Sans-serif]">{booking.id}</td>
                 <td className="p-3 font-[Poppins,Sans-serif]">
                   {booking.sunbedType}
