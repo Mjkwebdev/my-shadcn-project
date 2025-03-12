@@ -1,4 +1,5 @@
 import { Button } from "../components/ui/button";
+import BookingHistory from "./BookingHistory";
 import BookingTable from "./Table/BookingTable";
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
         />
       </div>
       <BookingTable/>
+      <BookingHistory/>
     </div>
   );
 };
