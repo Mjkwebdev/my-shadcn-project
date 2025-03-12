@@ -8,7 +8,7 @@ const Header = () => {
         <input
           type="text"
           placeholder="Search"
-          className="w-full pl-4 font-normal pr-10 py-2 text-sm bg-white rounded-full focus:outline-none placeholder:text-[#0d0d0d] text-[#0d0d0d]"
+          className="w-full pl-4 font-[Poppins,Sans-serif] font-normal pr-10 py-2 text-sm bg-white rounded-full focus:outline-none placeholder:text-[#0d0d0d] text-[#0d0d0d]"
           style={{ borderColor: "rgba(13, 13, 13, 0.2)", borderWidth: "1px" }}
         />
 
@@ -29,9 +29,9 @@ const Header = () => {
           <BellIcon className="h-6 w-6 text-[#ad8330]" />
         </div>
         <img
-          src="/src/assets/avatar.jpg"
+          src="/src/assets/avatar.png"
           alt="User Avatar"
-          className="h-12 w-12 rounded-full border border-gray-300 cursor-pointer"
+          className="h-10 w-10 rounded-full border border-gray-300 cursor-pointer"
         />
       </div>
     </div>
