@@ -61,7 +61,7 @@ const SideBar = () => {
                 className={`flex items-center px-4 py-2 rounded-lg cursor-pointer transition ${
                   isActive
                     ? "bg-[#ad8330] text-white hover:bg-[#ad8330]"
-                    : "text-gray-700 hover:bg-gray-100"
+                    : "text-[#252525] hover:bg-gray-100"
                 }`}
                 onClick={() => navigate(path)}
               >
