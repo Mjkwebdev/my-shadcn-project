@@ -16,11 +16,11 @@ const CardsGrid = ({list}:Props) => {
     <CardContent className="text-[black] pt-[-0.3rem]">
     <p>{list.location}</p> 
     <p className="text-[400]">Sunbed Type: {list.type}</p> 
-    <p className="font-bold font-[Poppins,Sans-serif]">Total Paid:  &euro;{list.price} </p> 
+    <p className="font-bold text-sm font-[Poppins,sans-serif] pb-4">Total Paid:  &euro;{list.price} </p> 
     </CardContent>
     <CardFooter className="mt-[0.1rem]">
       <Button variant={"link"} className="text-[white] bg-[#B56E08]">Rebook</Button>
-      <Button variant='link' className="text-[#252525] underline font-medium text-bold">Download PDF</Button>
+      <Button variant='link' className="text-[#252525] underline text-sm font-bold">Download PDF</Button>
     </CardFooter>
   </Card>
   )

@@ -10,7 +10,6 @@ const SearchInput = () => {
     <div className="flex w-full bg-[#F5F5F5] h-[3.75rem] justify-around">
       <div> 
         <FindCity /> </div>
-        
         <div>
       <SearchCalenderbox/>
         </div>
