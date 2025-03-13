@@ -46,7 +46,7 @@ const SideBar = () => {
   const location = useLocation(); // Get the current path
 
   return (
-    <div className="h-[calc(100vh-2rem)] w-full rounded-[11px] m-4 p-4 bg-[#f5f5f5] shadow-lg">
+    <div className="h-full w-full rounded-[11px] m-4 p-4 bg-[#f5f5f5] shadow-lg">
       <div className="flex items-center justify-center mb-4">
         <img src="/src/assets/Logo.svg" alt="Logo" />
       </div>
@@ -66,7 +66,7 @@ const SideBar = () => {
                 onClick={() => navigate(path)}
               >
                 <Icon className="h-5 w-5 mr-3" />
-                <span className="font-[Poppins,Sans-serif] font-normal text-sm">
+                <span className="font-[poppins] font-normal text-sm">
                   {title}
                 </span>
               </li>

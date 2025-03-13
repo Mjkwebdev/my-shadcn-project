@@ -1,6 +1,6 @@
 import { CalendarIcon } from "lucide-react";
 import { UserIcon } from "@heroicons/react/24/outline";
-import LoginForm from "./LoginForm";
+import LoginForm from "./Form/LoginForm";
 
 const Booking = () => {
   return (
@@ -13,20 +13,20 @@ const Booking = () => {
             className="w-16 h-16 rounded-full mr-3"
           />
           <div>
-            <h2 className="text-lg font-[Poppins,Sans-serif] font-semibold">
+            <h2 className="text-lg font-[poppins] font-semibold">
               Calabro Beach Club
             </h2>
-            <p className="text-sm font-[Poppins,Sans-serif] text-gray-500">
+            <p className="text-sm font-[poppins] text-gray-500">
               9 promenade de la mer, Menton, France
             </p>
           </div>
         </div>
         <div className="flex justify-between items-center py-3 border-b">
-          <div className="flex gap-2 items-center text-gray-700 font-semibold font-[Poppins,Sans-serif]">
+          <div className="flex gap-2 items-center text-gray-700 font-semibold font-[poppins]">
             <UserIcon className="h-6 w-6 text-blue-700 " />
             <span>2</span>
           </div>
-          <div className="flex gap-3 items-center text-gray-700 font-semibold font-[Poppins,Sans-serif]">
+          <div className="flex gap-3 items-center text-gray-700 font-semibold font-[poppins]">
             {/* <FaRegCalendarAlt className="mr-1" /> */}
             <CalendarIcon size={20} className="text-blue-700" />
             <span>01 May 2025</span>

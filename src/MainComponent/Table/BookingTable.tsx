@@ -35,30 +35,30 @@ const bookings: Booking[] = [
 const BookingTable: React.FC = () => {
   return (
     <div className="mt-3 flex flex-col gap-4">
-      <div className="text-lg font-bold text-[#0d0d0d] ">
-        Current & Upcoming Bookings
+      <div className="text-lg font-bold text-[#0d0d0d] font-[ambit]">
+      Current & Upcoming Bookings
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-[#f5f5f5] rounded-[10px]">
           <thead>
-            <tr className=" text-[#252525] font-semibold text-sm font-[Poppins,Sans-serif] border-b border-gray-300">
-              <th className="p-3 font-[Poppins,Sans-serif] text-left">#</th>
-              <th className="p-3 font-[Poppins,Sans-serif] text-left">
+            <tr className="   text-sm font-[poppins] border-b border-gray-300">
+              <th className="p-3 font-semibold font-[poppins] text-left">#</th>
+              <th className="p-3 font-semibold text-[#252525] font-[poppins] text-left">
                 Booking ID
               </th>
-              <th className="p-3 font-[Poppins,Sans-serif] text-left">
+              <th className="p-3 font-semibold font-[poppins] text-left">
                 Sunbed Type
               </th>
-              <th className="p-3 font-[Poppins,Sans-serif] text-left">
+              <th className="p-3 font-semibold font-[poppins] text-left">
                 Date & Time
               </th>
-              <th className="p-3 font-[Poppins,Sans-serif] text-left">
+              <th className="p-3 font-semibold font-[poppins] text-left">
                 Add-ons
               </th>
-              <th className="p-3 font-[Poppins,Sans-serif] text-left">
+              <th className="p-3 font-semibold font-[poppins] text-left">
                 Booking Status
               </th>
-              <th className="p-3 font-[Poppins,Sans-serif] text-left">
+              <th className="p-3 font-semibold font-[poppins] text-left">
                 Actions
               </th>
             </tr>
@@ -67,22 +67,22 @@ const BookingTable: React.FC = () => {
             {bookings?.map((booking, index) => (
               <tr
                 key={booking.id}
-                className={` text-[#252525] font-normal text-sm ${
+                className={` text-[#252525] font-normal ${
                   index !== bookings.length - 1 && "border-b border-gray-300"
                 }`}
               >
-                <td className="p-3 font-[Poppins,Sans-serif]">{index}</td>
-                <td className="p-3 font-[Poppins,Sans-serif]">{booking.id}</td>
-                <td className="p-3 font-[Poppins,Sans-serif]">
+                <td className="p-3 font-normal text-sm text-[#252525] font-[poppins]">{index}</td>
+                <td className="p-3 font-normal text-sm text-[#252525] font-[poppins]">{booking.id}</td>
+                <td className="p-3 font-normal text-sm text-[#252525] font-[poppins]">
                   {booking.sunbedType}
                 </td>
-                <td className="p-3 font-[Poppins,Sans-serif]">
+                <td className="p-3 font-normal text-sm text-[#252525] font-[poppins]">
                   {booking.dateTime}
                 </td>
-                <td className="p-3 font-[Poppins,Sans-serif]">
+                <td className="p-3 font-normal text-sm text-[#252525] font-[poppins]">
                   {booking.addOns}
                 </td>
-                <td className="p-3 font-[Poppins,Sans-serif]">
+                <td className="p-3 font-normal text-sm text-[#252525] font-[poppins]">
                   <span
                     className="px-3 py-1 rounded-full text-xs font-normal"
                     style={{
@@ -98,7 +98,7 @@ const BookingTable: React.FC = () => {
                     {booking.status}
                   </span>
                 </td>
-                <td>
+                <td className="p-3 font-normal">
                   {" "}
                   <Button variant={"actionButton"}>Modify</Button>
                 </td>

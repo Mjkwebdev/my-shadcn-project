@@ -30,7 +30,7 @@ const CardsGrid = ({ list }: Props) => {
       <CardContent className="text-[black] pt-[-0.3rem]">
         <p>{list.location}</p>
         <p className="text-[400]">Sunbed Type: {list.type}</p>
-        <p className="font-bold font-[Poppins,Sans-serif]">
+        <p className="font-bold font-[poppins]">
           Total Paid: &euro;{list.price}{" "}
         </p>
       </CardContent>

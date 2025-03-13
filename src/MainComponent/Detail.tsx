@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import BookNowForm from "./BookNowForm";
+import BookNowForm from "./Form/BookNowForm";
 interface Params extends Record<string, string | undefined> {
   slug: string;
 }
@@ -25,16 +25,16 @@ const Detail = () => {
        */}
       <div className="flex items-start  mt-2 gap-6">
         <div className="w-[70%] flex flex-col gap-4">
-          {/* <div className="text-[32px] font-[Poppins,Sans-serif] font-bold text-[#0d0d0d">
+          {/* <div className="text-[32px] font-[poppins] font-bold text-[#0d0d0d">
             {slug}
           </div> */}
-          <div className="text-[32px] font-[Poppins,Sans-serif] font-bold text-[#0d0d0d]">
+          <div className="text-[32px] font-[poppins] font-bold text-[#0d0d0d]">
             <div>{firstLine}</div>
             {secondLine && <div>{secondLine}</div>}
           </div>
 
           {/* Description Section */}
-          <div className="text-lg font-[Poppins,Sans-serif] text-gray-700 font-medium leading-relaxed">
+          <div className="text-lg font-[poppins] text-gray-700 font-medium leading-relaxed">
             The Calabro Beach Club welcomes you to the famous seaside town of
             Menton, located just a short distance from Italy. Newly opened on
             the Sablettes beach, Calabro Beach Club is the latest beach

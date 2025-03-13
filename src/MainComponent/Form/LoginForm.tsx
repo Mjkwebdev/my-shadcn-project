@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../components/ui/button";
+import { Button } from "../../components/ui/button";
 interface FormData {
   email: string;
   password: string;
@@ -31,7 +31,7 @@ export default function LoginForm() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-xs font-medium font-[Poppins,Sans-serif] text-[#252525]"
+                className="block text-xs font-medium font-[poppins] text-[#252525]"
               >
                 Email address
               </label>
@@ -45,7 +45,7 @@ export default function LoginForm() {
                   autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="block w-full font-[Poppins,Sans-serif] font-normal text-xs rounded-[6px] placeholder:text-[#0d0d0d] border border-[#9d9d9d] bg-white px-3 py-1.5 text-[#252525] outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full font-[poppins] font-normal text-xs rounded-[6px] placeholder:text-[#0d0d0d] border border-[#9d9d9d] bg-white px-3 py-1.5 text-[#252525] outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function LoginForm() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-xs font-medium font-[Poppins,Sans-serif] text-[#252525]"
+                className="block text-xs font-medium font-[poppins] text-[#252525]"
               >
                 Password
               </label>
@@ -67,7 +67,7 @@ export default function LoginForm() {
                   autoComplete="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="block w-full font-[Poppins,Sans-serif] font-normal text-xs rounded-[6px] placeholder:text-[#0d0d0d] border border-[#9d9d9d] bg-white px-3 py-1.5 text-[#252525] outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full font-[poppins] font-normal text-xs rounded-[6px] placeholder:text-[#0d0d0d] border border-[#9d9d9d] bg-white px-3 py-1.5 text-[#252525] outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
