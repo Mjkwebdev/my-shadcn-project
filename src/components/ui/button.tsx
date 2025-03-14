@@ -18,9 +18,10 @@ const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        booknow: "!bg-[#b56e0b] !text-white font-[poppins] !font-medium !py-5 !text-base hover:!bg-[#b56e3e] hover:!text-white",
-        homebutton: "!bg-white !text-[#b56e0b] font-[poppins] !text-base !font-medium hover:!bg-[#white] hover:!text-[#b56e0b]",
-        actionButton: "!bg-[#4a90e2] !text-white font-[poppins] py-3 !text-xs !font-normal hover:!bg-[#4a90e2] hover:!text-white",
+        booknow: "!bg-[#b56e0b] text-white font-[poppins] !font-medium !py-5 !text-base hover:bg-[#b56e3e] hover:text-white",
+        previousButton: "!bg-[#e3e3e3] text-black font-[poppins] !font-medium !py-5 !text-base hover:bg-[#e3e3e3] hover:text-black border !border-black/40",
+        homebutton: "!bg-white !text-[#b56e0b] font-[poppins] !text-base !font-medium hover:bg-[#white] hover:text-[#b56e0b]",
+        actionButton: "!bg-[#4a90e2] text-white font-[poppins] py-3 !text-xs !font-normal hover:bg-[#4a90e2] hover:text-white",
         link: "text-primary font-[poppins] !font-medium !text-base underline underline-offset-4 hover:underline",
       },
       size: {
