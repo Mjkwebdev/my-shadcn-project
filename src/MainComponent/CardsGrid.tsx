@@ -18,7 +18,7 @@ const CardsGrid = ({ list }: Props) => {
   return (
     <Card
       onClick={() => navigate(`/detail/${list.title}`)}
-      className="w-[20rem] bg-[#F5F5F5] p-3"
+      className=" bg-[#F5F5F5] p-2"
     >
       <img src={list.image} className="rounded-md h-[12rem]" />
       <CardHeader>
@@ -27,23 +27,19 @@ const CardsGrid = ({ list }: Props) => {
           {list.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-[black] pt-[-0.3rem]">
-        <p>{list.location}</p>
-        <p className="text-[400]">Sunbed Type: {list.type}</p>
-        <p className="font-bold font-[poppins]">
+      <CardContent className="text-black flex flex-col gap-1 mt-1">
+        <p className="font-normal text-xs font-[poppins]">{list.location}</p>
+        <p className="font-normal text-xs font-[poppins]">{list.type}</p>
+        <p className="font-normal text-xs font-[poppins]">{list.dateAvailable}</p>
+        <p className="font-medium text-sm font-[poppins]">
           Total Paid: &euro;{list.price}{" "}
         </p>
       </CardContent>
-      <CardFooter className="mt-[0.1rem]">
-        <Button variant={"link"} className="text-[white] bg-[#B56E08]">
+      <CardFooter className="mt-4">
+        <Button variant="booknow" className="text-[white] bg-[#B56E08]">
           Rebook
         </Button>
-        <Button
-          variant="link"
-          className="text-[#252525] underline font-medium text-bold"
-        >
-          Download PDF
-        </Button>
+        <Button variant="link">Download PDF</Button>
       </CardFooter>
     </Card>
   );

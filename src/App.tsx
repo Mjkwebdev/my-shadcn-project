@@ -5,6 +5,7 @@ import DetailPage from "./MainComponent/Detail";
 import Booking from "./MainComponent/Booking";
 import Layout from "./MainComponent/Layout/Layout";
 import Home from "./MainComponent/Home";
+import MyBooking from "./MainComponent/MyBooking";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/detail/:slug" element={<DetailPage />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/my-bookings" element={<MyBooking />} />
         </Routes>
       </Layout>
     </BrowserRouter>

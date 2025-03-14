@@ -7,7 +7,7 @@ export interface Listing {
   location: string;
   price: number;
   label: string;
-  dateAvailable: Date;
+  dateAvailable: string;
   maxGuest: number;
 }
 
@@ -16,11 +16,11 @@ export const listings: Listing[] = [
     id: "1",
     title: "VIP Cabana at Golden Sands Beach",
     image: "src/assets/image (1).png",
-    location: "Nice",
-    type:"VIP Cabana",
+    location: "📍  Golden Sands Beach Resort, Rügen Island, Germany",
+    type:"🛏️  Sunbed Type: VIP Cabana",
     price: 30,
     label: "Soon available for booking",
-    dateAvailable: new Date("2024-04-10"),
+    dateAvailable: "🗓️  Date & Time: February 18, 2025 | 10:00 AM - 6:00 PM",
     maxGuest: 4,
   },
   {
@@ -31,7 +31,7 @@ export const listings: Listing[] = [
     type:"Standard Sunbed",
     price: 28,
     label: "Soon available for booking",
-    dateAvailable: new Date("2024-14-03"),
+    dateAvailable: "🗓️  Date & Time: February 18, 2025 | 10:00 AM - 6:00 PM",
     maxGuest: 4,
   },
   {
@@ -42,7 +42,7 @@ export const listings: Listing[] = [
     type: "Luxury lougage",
     price: 45,
     label: "Soon available for booking",
-    dateAvailable: new Date("2024-03-01"),
+    dateAvailable: "🗓️  Date & Time: February 18, 2025 | 10:00 AM - 6:00 PM",
     maxGuest: 4,
   },
   {
@@ -53,7 +53,7 @@ export const listings: Listing[] = [
     type:"Standard Sunbed",
     price: 25,
     label: "Soon available for booking",
-    dateAvailable: new Date("2024-02-10"),
+    dateAvailable: "🗓️  Date & Time: February 18, 2025 | 10:00 AM - 6:00 PM",
     maxGuest: 4,
   },
   {
@@ -64,7 +64,7 @@ export const listings: Listing[] = [
     type:"Standard Sunbed",
     price: 24,
     label: "Soon available for booking",
-    dateAvailable: new Date("2024-01-10"),
+    dateAvailable: "🗓️  Date & Time: February 18, 2025 | 10:00 AM - 6:00 PM",
     maxGuest: 4,
   },
   {
@@ -75,7 +75,7 @@ export const listings: Listing[] = [
     type:"Standard Sunbed",
     price: 24,
     label: "Soon available for booking",
-    dateAvailable: new Date("2024-01-10"),
+    dateAvailable: "🗓️  Date & Time: February 18, 2025 | 10:00 AM - 6:00 PM",
     maxGuest: 4,
   }
 ];

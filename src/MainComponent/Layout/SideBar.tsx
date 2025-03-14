@@ -22,7 +22,7 @@ const menuItems = [
   {
     title: "My Bookings",
     icon: InboxIcon,
-    path: "/my-booking",
+    path: "/my-bookings",
   },
   {
     title: "Profile",
