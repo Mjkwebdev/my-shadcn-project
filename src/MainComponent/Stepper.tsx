@@ -19,8 +19,8 @@ const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
       {steps.map((step, index) => (
         <li
           key={index}
-          className={`flex justify-start items-start  ${
-            index === steps.length - 1 ? "xl:pt-3" : "w-full"
+          className={`flex  ${
+            index === steps.length - 1 ? "pt-[30px]" : "w-full"
           }`}
         >
           <div className="flex justify-center items-center flex-col">
@@ -30,7 +30,7 @@ const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
               } rounded-full`}
             >
               <span
-                className={`w-4 h-4 text-sm font-semibold font-[poppins] rounded-full ${
+                className={`text-sm font-semibold font-[poppins] rounded-full ${
                   currentStep >= index + 1 ? "text-white" : "text-[#0d0d0d]"
                 }`}
               >
@@ -38,7 +38,6 @@ const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
               </span>
             </span>
             <div className="hidden xl:block text-center mt-2">
-              {/* <p className="text-[#252525] font-[poppins] text-xs font-normal">{step.label}</p> */}
               <p className="text-[#252525] font-[poppins] text-xs font-normal">
                 {step.description}
               </p>
@@ -48,7 +47,7 @@ const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
           {/* Line between steps */}
           {index < steps.length - 1 && (
             <div
-              className={`h-1 flex-1 mt-5  ${
+              className={`h-1 items-center justify-center flex-1 mt-5  ${
                 currentStep >= index + 2 ? "bg-[#b56e08]" : " bg-[#9d9d9d]"
               }`}
             ></div>
@@ -69,14 +68,16 @@ const StepperWithContent: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {
-    if (currentStep < steps.length - 1) {
+    if (currentStep < steps.length) {
       setCurrentStep(currentStep + 1);
       console.log("Next Step:", currentStep + 1); // Debugging
     }
   };
 
+  console.log("currentStep", currentStep);
+
   const prevStep = () => {
-    if (currentStep > 0) {
+    if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
       console.log("Previous Step:", currentStep - 1); // Debugging
     }
@@ -84,7 +85,7 @@ const StepperWithContent: React.FC = () => {
 
   return (
     <div className="max-w-xl mt-6 mx-auto">
-      <h2 className="text-lg mb-5 font-[ambit] font-bold text-center">
+      <h2 className="text-lg font-[ambit] font-bold text-center">
         Book A Sunbed
       </h2>
       {/* Stepper Component */}
@@ -92,16 +93,16 @@ const StepperWithContent: React.FC = () => {
 
       {/* Step Content */}
       <div className="mt-6 p-4 border rounded-[11px] bg-[#f5f5f5] text-left">
-        {currentStep === 0 && <StepperForm1 />}
-        {currentStep === 1 && <StepperForm2 />}
-        {currentStep === 2 && <div> Review & Submit in Step 3</div>}
-        {currentStep === 3 && (
+        {currentStep === 1 && <StepperForm1 />}
+        {currentStep === 2 && <StepperForm2 />}
+        {currentStep === 3 && <div> Review & Submit in Step 3</div>}
+        {currentStep === 4 && (
           <div className="text-lg font-semibold">
             ✅ Completed! Step 4 is Done
           </div>
         )}
 
-        {currentStep > 0 && (
+        {currentStep > 1 && (
           <Button
             className="mt-2 mr-2"
             disabled={currentStep === steps.length + 1}
@@ -111,10 +112,10 @@ const StepperWithContent: React.FC = () => {
             Previous
           </Button>
         )}
-        {currentStep < 3 && (
+        {currentStep < steps.length && (
           <Button
             className="mt-2"
-            disabled={currentStep === steps.length - 1}
+            disabled={currentStep === steps.length}
             onClick={nextStep}
             variant={"booknow"}
           >
