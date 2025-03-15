@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import BookNowForm from "./Form/BookNowForm";
 interface Params extends Record<string, string | undefined> {
   slug: string;
@@ -6,6 +6,8 @@ interface Params extends Record<string, string | undefined> {
 
 const Detail = () => {
   const { slug } = useParams<Params>();
+  const location = useLocation();
+  const { state } = location;
 
   // Split the slug into words and dynamically create lines
   const words = slug?.split(" ");
@@ -16,8 +18,8 @@ const Detail = () => {
       {/* Image Section */}
       <img
         className="w-full rounded-lg shadow-lg"
-        src="/src/assets/image (1).png"
-        alt="Beach View"
+        src={`/${state.image}`}
+        alt={slug}
       />
 
       {/* Slug/Title Section */}
@@ -35,13 +37,7 @@ const Detail = () => {
 
           {/* Description Section */}
           <div className="text-lg font-[poppins] text-gray-700 font-medium leading-relaxed">
-            The Calabro Beach Club welcomes you to the famous seaside town of
-            Menton, located just a short distance from Italy. Newly opened on
-            the Sablettes beach, Calabro Beach Club is the latest beach
-            destination you don't want to miss! Situated on the seafront
-            promenade and featuring brand-new facilities, Andrea and his team
-            will ensure you have the best experience for a day at the private
-            beach in Menton.
+           {state.description}
           </div>
         </div>
         <div className="w-[30%]">

@@ -47,6 +47,7 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/detail/:slug" element={<DetailPage />} />
+        {/* <Route path="/detail/:title/:description/:image" element={<DetailPage />} /> */}
 
         {/* Pages that should have Layout */}
         <Route element={<Layout />}>

@@ -17,10 +17,22 @@ const CardsGrid = ({ list }: Props) => {
   const navigate = useNavigate();
   return (
     <Card
-      onClick={() => navigate(`/detail/${list.title}`)}
+      // onClick={() => navigate(`/detail/${list.title}`)}
+      onClick={() =>
+        navigate(`/detail/${list.title}`, {
+          state: {
+            location: list.location,
+            image: list.image,
+            description: list.description,
+            type: list.type,
+            dateAvailable: list.dateAvailable,
+            price: list.price,
+          },
+        })
+      }
       className=" bg-[#F5F5F5] p-2"
     >
-      <img src={list.image} className="rounded-md h-[12rem]" />
+      <img src={list?.image} className="rounded-md h-[12rem]" />
       <CardHeader>
         <CardTitle className="pt-[-0.3rem] font-[sans-serif] text-1xl">
           {" "}
@@ -30,7 +42,9 @@ const CardsGrid = ({ list }: Props) => {
       <CardContent className="text-black flex flex-col gap-1 mt-1">
         <p className="font-normal text-xs font-[poppins]">{list.location}</p>
         <p className="font-normal text-xs font-[poppins]">{list.type}</p>
-        <p className="font-normal text-xs font-[poppins]">{list.dateAvailable}</p>
+        <p className="font-normal text-xs font-[poppins]">
+          {list.dateAvailable}
+        </p>
         <p className="font-medium text-sm font-[poppins]">
           Total Paid: &euro;{list.price}{" "}
         </p>
