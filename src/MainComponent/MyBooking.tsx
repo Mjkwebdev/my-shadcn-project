@@ -5,6 +5,7 @@ const MyBooking = () => {
   return (
    <>
    <UpcomingBooking/>
+   <p className="text-2xl font-bold font-[ambit] p-3"> Past Bookings</p>
    <PastBooking/>
    </>
   )

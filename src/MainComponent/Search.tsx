@@ -11,6 +11,7 @@ const SearchPage = () => {
     <>
       <LocationMap />
       <SearchInputAbs dateParam={dateParam} guestsParam={guestsParam} />
+      <p className="text-2xl font-bold font-[ambit] p-3"> Beaches</p>
       <PastBooking />
     </>
   );
