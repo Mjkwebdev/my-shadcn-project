@@ -1,4 +1,4 @@
-import { UsersIcon, UserIcon } from "@heroicons/react/24/outline";
+import { UserIcon } from "@heroicons/react/24/outline";
 import {
   Select,
   SelectContent,
@@ -6,31 +6,34 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../components/ui/select";
-import { useState } from "react";
 
 interface SelectProps {
   maxGuest: number;
+  selectedGuest: string;
+  setSelectedGuest: any;
 }
-const SelectBox = ({ maxGuest }: SelectProps) => {
-  const [selectedGuest, setSelectedGuest] = useState("2");
-  const handleSelectGuest=( value: string)=>{
-      setSelectedGuest(value);
-  }
+const SelectBox = ({
+  maxGuest,
+  selectedGuest,
+  setSelectedGuest,
+}: SelectProps) => {
+  const handleSelectGuest = (value: string) => {
+    setSelectedGuest(value);
+  };
+
   const guests = Array.from({ length: maxGuest }, (_, i) => i + 1);
   return (
     <Select value={selectedGuest} onValueChange={handleSelectGuest}>
-      <SelectTrigger className="w-[17rem] h-[3rem] mb-2 bg-white">
-        <SelectValue/> 
+      <SelectTrigger className="w-[17rem] h-[3rem]">
+        <SelectValue />
       </SelectTrigger>
       <SelectContent>
         {guests.map((num) => (
           <SelectItem key={num} value={num.toString()}>
-            {num == 1 ? (
-              <UserIcon className="h-8 w-8 text-gray-500 " />
-            ) : (
-              <UsersIcon className="h-8 w-8 text-gray-500" />
-            )}
-           {num} Guest{num > 1 ? "s" : ""}
+            <UserIcon className="h-8 w-8 " />
+            <div className="font-[poppins] text-sm text-[#0d0d0d]">
+              {num} Guest{num > 1 ? "s" : ""}
+            </div>
           </SelectItem>
         ))}
       </SelectContent>
