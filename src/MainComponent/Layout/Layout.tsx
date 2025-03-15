@@ -1,18 +1,16 @@
-import { ReactNode } from "react";
-import SideBar from "./SideBar"; // Make sure this import is correct
+import { Outlet } from "react-router-dom";
+import SideBar from "./SideBar";
 import Header from "./Header";
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-function Layout({ children }: LayoutProps) {
+function Layout() {
   return (
     <div className="flex gap-3">
-      <div className="w-[18%]"><SideBar /></div> 
+      <div className="w-[18%]"><SideBar /></div>
       <div className="w-[82%] p-4">
-       <Header/>
-        <main>{children}</main>
+        <Header />
+        <main>
+          <Outlet /> {/* This will render nested routes inside Layout */}
+        </main>
       </div>
     </div>
   );

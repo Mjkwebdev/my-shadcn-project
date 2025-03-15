@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Button } from "../../components/ui/button";
+import { useNavigate } from "react-router-dom";
+
 interface FormData {
   email: string;
   password: string;
@@ -10,6 +12,7 @@ export default function LoginForm() {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -72,7 +75,14 @@ export default function LoginForm() {
               </div>
             </div>
 
-            <Button variant={"booknow"}> Sign in</Button>
+            <Button
+              onClick={() => {
+                navigate("/home");
+              }}
+              variant={"booknow"}
+            >
+              Sign in
+            </Button>
           </form>
         </div>
       </div>
