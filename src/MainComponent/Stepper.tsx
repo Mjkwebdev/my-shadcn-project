@@ -3,70 +3,70 @@ import StepperForm1 from "./Form/StepperForm1";
 import { Button } from "../components/ui/button";
 import StepperForm2 from "./Form/StepperForm2";
 
+interface Step {
+  label: string;
+  description: string;
+}
+
 interface StepperProps {
-  steps: string[];
+  steps: Step[];
   currentStep: number;
 }
 
 const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
   return (
-    <ol className="flex items-center w-full">
-      {steps.map((step, index) => {
-        const isCompleted = index < currentStep;
-        const isActive = index === currentStep;
-
-        return (
-          <li key={index} className="flex w-full items-center">
-            {/* Stepper Line */}
-            {index !== 0 && (
-              <div
-                className={`w-full h-1 ${
-                  isCompleted ? "bg-[#b56e08]" : "bg-[#f5f5f5]"
-                }`}
-              ></div>
-            )}
-
-            {/* Step Icon */}
+    <ol className="flex items-center w-full ">
+      {steps.map((step, index) => (
+        <li
+          key={index}
+          className={`flex justify-start items-start  ${
+            index === steps.length - 1 ? "xl:pt-3" : "w-full"
+          }`}
+        >
+          <div className="flex justify-center items-center flex-col">
             <span
-              className={`flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0 ${
-                isCompleted
-                  ? "bg-[#b56e08] text-white"
-                  : isActive
-                  ? "bg-[#b56e08] text-white"
-                  : "bg-[#f5f5f5] text-[#0d0d0d]"
-              }`}
+              className={`flex items-center justify-center w-10 h-10 ${
+                currentStep >= index + 1 ? "bg-[#b56e08]" : "bg-[#f5f5f5]"
+              } rounded-full`}
             >
-              {isCompleted ? (
-                <svg
-                  className="w-4 h-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 16 12"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M1 5.917 5.724 10.5 15 1.5"
-                  />
-                </svg>
-              ) : (
-                <span className="text-sm font-semibold">{index + 1}</span>
-              )}
+              <span
+                className={`w-4 h-4 text-sm font-semibold font-[poppins] rounded-full ${
+                  currentStep >= index + 1 ? "text-white" : "text-[#0d0d0d]"
+                }`}
+              >
+                {step.label}
+              </span>
             </span>
-          </li>
-        );
-      })}
+            <div className="hidden xl:block text-center mt-2">
+              {/* <p className="text-[#252525] font-[poppins] text-xs font-normal">{step.label}</p> */}
+              <p className="text-[#252525] font-[poppins] text-xs font-normal">
+                {step.description}
+              </p>
+            </div>
+          </div>
+
+          {/* Line between steps */}
+          {index < steps.length - 1 && (
+            <div
+              className={`h-1 flex-1 mt-5  ${
+                currentStep >= index + 2 ? "bg-[#b56e08]" : " bg-[#9d9d9d]"
+              }`}
+            ></div>
+          )}
+        </li>
+      ))}
     </ol>
-
-
   );
 };
 
 const StepperWithContent: React.FC = () => {
-  const steps = ["Step 1", "Step 2", "Step 3", "Step 4"];
-  const [currentStep, setCurrentStep] = useState(0);
+  const steps = [
+    { label: "01", description: "Select Location & Date" },
+    { label: "02", description: "Choose Sunbed" },
+    { label: "03", description: "Add ons" },
+    { label: "04", description: "Review & Payment" },
+  ];
+  const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {
     if (currentStep < steps.length - 1) {
@@ -101,7 +101,7 @@ const StepperWithContent: React.FC = () => {
           </div>
         )}
 
-        {currentStep > 1 && (
+        {currentStep > 0 && (
           <Button
             className="mt-2 mr-2"
             disabled={currentStep === steps.length + 1}
@@ -111,7 +111,7 @@ const StepperWithContent: React.FC = () => {
             Previous
           </Button>
         )}
-        {/* {currentStep === steps.length - 1 &&  */}
+        {currentStep < 3 && (
           <Button
             className="mt-2"
             disabled={currentStep === steps.length - 1}
@@ -120,38 +120,10 @@ const StepperWithContent: React.FC = () => {
           >
             Next
           </Button>
-        {/* } */}
+        )}
       </div>
     </div>
   );
 };
 
 export default StepperWithContent;
-
-
-
-// ol className="flex items-center w-full mb-6">
-// {steps.map((step, index) => (
-//   <li
-//     key={index}
-//     className={`flex w-full items-center ${
-//       currentStep === index + 1 ? "text-blue-600" : "text-gray-500"
-//     }`}
-//   >
-//     <span
-//       className={`flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 ${
-//         currentStep === index + 1 ? "bg-blue-100" : "bg-gray-100"
-//       }`}
-//     >
-//       {step}
-//     </span>
-//     {index !== steps.length - 1 && (
-//       <div
-//         className={`w-full h-1 ${
-//           currentStep > index + 1 ? "bg-blue-600" : "bg-gray-300"
-//         } mx-2`}
-//       ></div>
-//     )}
-//   </li>
-// ))}
-// </ol>
